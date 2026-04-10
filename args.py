@@ -40,6 +40,7 @@ class Arguments:
 
         # dataset
         parser.add_argument("--dataset_name", type=str, default="cv", choices=["cs", "cv", "voc"])
+        parser.add_argument("--p_dataset_config", type=str, default=None, help="path to YAML dataset config (optional)")
         parser.add_argument("--dir_datasets", type=str, default="/scratch/shared/beegfs/gyungin/datasets")
         parser.add_argument("--downsample", type=int, default=4, help="downsample for Cityscapes training set")
         parser.add_argument("--use_aug", type=bool, default=True, help="data augmentation")
@@ -87,7 +88,7 @@ class Arguments:
         else:
             if args.dataset_name == "cs":
                 args.batch_size = 4
-                args.dir_dataset = "/scratch/shared/beegfs/gyungin/datasets/cityscapes"
+                args.dir_dataset = "/mnt/pub1/data_mic/cityscapes"
                 args.ignore_index = 19
                 args.mean, args.std = [0.28689554, 0.32513303, 0.28389177], [0.18696375, 0.19017339, 0.18720214]
                 args.n_classes = 19

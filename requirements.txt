@@ -1,0 +1,5 @@
+torch>=1.8.1
+torchvision>=0.9.1
+tqdm>=4.59.0
+opencv-python>=4.5.1.48
+PyYAML
